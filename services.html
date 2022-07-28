@@ -34,7 +34,7 @@
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-8">
                     <div class="flex items-center">
-                        <div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div>
+                        <a href="index.html"><div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div></a>
                     </div>
                     <div class="flex items-center space-x-6 uppercase text-[16px]">
                         <div><a href="portfolio.html">Portfolio</a></div>
@@ -86,7 +86,8 @@
                     <div>
                         <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" @click="toggle(1)">
                             <div >Full Scope New Build/Renovation</div>
-                            <div class="text-5xl">+</div>
+                            <div x-show="show1" class="text-5xl">-</div>
+                            <div x-show="!show1" class="text-5xl">+</div>
                         </div>
                         <div x-show="show1" class="my-8 pb-8 border-b-[1px] border-primary-100">
                             From initial planning stages to installation.  In 
@@ -100,7 +101,8 @@
                     <div class="my-8">
                         <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" @click="toggle(2)">
                             <div >Full Scope Furnishings</div>
-                            <div class="text-5xl">+</div>
+                            <div x-show="show2" class="text-5xl">-</div>
+                            <div x-show="!show2" class="text-5xl">+</div>
                         </div>
                         <div x-show="show2" class="my-8 pb-8 border-b-[1px] border-primary-100">
                             Full home furnishing of all soft goods.  Includes space
@@ -113,7 +115,8 @@
                     <div class="mb-8">
                         <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" @click="toggle(3)">
                             <div >À La Carte</div>
-                            <div class="text-5xl">+</div>
+                            <div x-show="show3" class="text-5xl">-</div>
+                            <div x-show="!show3" class="text-5xl">+</div>
                         </div>
                         <div x-show="show3" class="my-8 pb-8 border-b-[1px] border-primary-100">
                             Design services tailored to specific needs for smaller projects.
@@ -121,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="uppercase w-fit border-b-2 border-gray text-md font-medium py-2 my-4 font-sans">Inquire Now</div>
+                <a href="contact.html"><div class="uppercase w-fit border-b-2 border-gray text-md font-medium py-2 my-4 font-sans">Inquire Now</div></a>
             </div>
         </div>
 
@@ -138,8 +141,8 @@
         <div class="bg-secondary p-20">
             <div class="grid grid-cols-2 container mx-auto">
                 <div>
-                    <div class="uppercase text-4xl font-times tracking-widest">Laura Motley</div>
-                    <div class="uppercase text-4xl font-times tracking-widest pl-28">Design</div>
+                    <a href="index.html"><div class="uppercase text-4xl font-times tracking-widest">Laura Motley</div></a>
+                    <a href="index.html"><div class="uppercase text-4xl font-times tracking-widest pl-28">Design</div></a>
                     
                     <div class="w-[70%]">   
                         <div class="my-16 text-[20px]">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
