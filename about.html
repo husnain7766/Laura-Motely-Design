@@ -11,11 +11,14 @@
                 theme: {
                     extend: {
                         colors: {
-                            clifford: '#da373d',
+                            primary: "#707070",
+                            secondary: "#F9F9F6"
                         }
                     },
                     fontFamily: {
                         times: ['Times New Roman', 'serif'],
+                        mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                        sans: ['Inter var', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
                     },
                     letterSpacing: {
                         widest: "0.5em"
@@ -23,60 +26,78 @@
                 }
             }
         </script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     </head>
-    <body class="p-0 m-0 font-times">
-        <header>
+    <body class="p-0 m-0 font-times text-primary">
+        <header class="bg-secondary">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-8">
                     <div class="flex items-center">
                         <div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div>
                     </div>
-                    <div class="flex items-center space-x-6 uppercase text-sm">
-                        <div>Portfolio</div>
-                        <div>Services</div>
-                        <div>About</div>
-                        <div>Instagram</div>
-                        <div>Contact</div>
+                    <div class="flex items-center space-x-6 uppercase text-[16px]">
+                        <div><a href="portfolio.html">Portfolio</a></div>
+                        <div><a href="services.html">Services</a></div>
+                        <div><a href="about.html">About</a></div>
+                        <div><a href="">Instagram</a></div>
+                        <div><a href="contact.html">Contact</a></div>
                     </div>
                 </div>
             </div>
+            
         </header>
         
         <div class="flex items-center container mx-auto p-24">
-            <div class="w-1/2 text-5xl p-8">
+            <div class="w-1/2 text-[48px] p-8">
                 <div class="">Laura's work is timeless</div>
-                <div class="my-16">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quibusdam iusto tempora vero. Rem doloribus unde iste nisi </div>
+                <div class="my-16">
+                    Each project is unique, but it’s her focus on each client’s lifestyle, program, and goals, above all else, that is the constant.  
+                </div>
             </div>
-            <div class="w-1/2 bg-black h-[700px]"></div>
+            <div class="w-1/2"><img src="images/lm.png" /></div>
         </div>
 
         <div class="flex items-center container mx-auto">
             <div class="w-1/2"></div>
             <div class="w-1/2 text-xl pr-32 pl-16">
-                <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores vitae esse magnam est magni laboriosam nemo ratione voluptatum praesentium, placeat molestias rerum doloribus itaque accusantium, tempore dolorem nobis saepe minima.</div>
-                <div class="my-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores vitae esse magnam est magni laboriosam nemo ratione voluptatum praesentium, placeat molestias rerum doloribus itaque accusantium, tempore dolorem nobis saepe minima.</div>
-                <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores vitae esse magnam est magni laboriosam nemo ratione voluptatum praesentium, placeat molestias rerum doloribus itaque accusantium, tempore dolorem nobis saepe minima.</div>
+                <div>
+                    After working in the design world for over a decade, Laura opened her studio in 2017.  In that time she has completed projects ranging from a new hacienda in the hills above Montecito, to the interior design of an apartment in New York, the interior design of a lakeside home in Idaho, to a complete renovation of a modern home overlooking the Central Coast of California, and the renovation of an oceanside condominium in Montecito.
+                </div>
+                <div class="my-8">
+                    The design styles ranged from a sympathetic interpretation of classical Andalusian-based Santa Barbara style to a coastal modern home designed to showcase an extensive art collection.  Throughout all the projects, the common element was a sense of timeless style that will endure and stand the test of time.
+                </div>
+                <div>
+                    In each project, the client’s lifestyle, program, and aspirations are the drivers for the design.  Each project is unique, beginning with the client’s lifestyle, program, and aspirations, before turning to address the context, site, materials, and sense of place.
+                </div>
             </div>
         </div>
 
-        <div class="h-3/4 flex justify-around container mx-auto items-center">
-            <div class="w-[600px] bg-black h-[350px]"></div>
-            <div class="w-[600px] bg-black h-[350px]"></div>
+        <div class="h-3/4 flex justify-around container mx-auto items-center my-24">
+            <div class="w-[600px]"><img src="images/lm-about-2-1.png" /></div>
+            <div class="w-[600px]"><img src="images/lm-about-2-2.png" /></div>
         </div>
     
-        <footer class="flex justify-between p-20 container mx-auto">
-            <div class="w-[40%]">
-                <div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div>
-                <div class="my-8 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nobis distinctio dicta voluptatem quasi officiis ratione reprehenderit delectus illum, molestiae explicabo soluta at quaerat consectetur voluptates architecto? Eligendi, explicabo excepturi!</div>
+        <div class="bg-secondary p-20">
+            <div class="grid grid-cols-2 container mx-auto">
+                <div>
+                    <div class="uppercase text-4xl font-times tracking-widest">Laura Motley</div>
+                    <div class="uppercase text-4xl font-times tracking-widest pl-28">Design</div>
+                    
+                    <div class="w-[70%]">   
+                        <div class="my-16 text-[20px]">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
+                        <div class="text-[10px]">COPYRIGHT 2022  LAURA MOTLEY DESIGN LLC </div>
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-6 uppercase text-sm text-[16px]">
+                    <div><a href="portfolio.html">Portfolio</a></div>
+                    <div><a href="services.html">Services</a></div>
+                    <div><a href="about.html">About</a></div>
+                    <div><a href="">Instagram</a></div>
+                    <div><a href="contact.html">Contact</a></div>
+                </div>
             </div>
-            <div class="flex items-center space-x-6 uppercase text-sm">
-                <div>Portfolio</div>
-                <div>Services</div>
-                <div>About</div>
-                <div>Instagram</div>
-                <div>Contact</div>
-            </div>
-        </footer>
+        </div>
     </body>
     </html>
     

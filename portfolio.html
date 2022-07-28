@@ -11,11 +11,14 @@
                 theme: {
                     extend: {
                         colors: {
-                            clifford: '#da373d',
+                            primary: "#707070",
+                            secondary: "#F9F9F6"
                         }
                     },
                     fontFamily: {
                         times: ['Times New Roman', 'serif'],
+                        mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                        sans: ['Inter var', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
                     },
                     letterSpacing: {
                         widest: "0.5em"
@@ -24,57 +27,70 @@
             }
         </script>
     </head>
-    <body class="p-0 m-0 font-times">
-        <header>
+    <body class="p-0 m-0 font-times text-primary">
+        <header class="bg-secondary">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-8">
                     <div class="flex items-center">
                         <div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div>
                     </div>
-                    <div class="flex items-center space-x-6 uppercase text-sm">
-                        <div>Portfolio</div>
-                        <div>Services</div>
-                        <div>About</div>
-                        <div>Instagram</div>
-                        <div>Contact</div>
+                    <div class="flex items-center space-x-6 uppercase text-[16px]">
+                        <div><a href="portfolio.html">Portfolio</a></div>
+                        <div><a href="services.html">Services</a></div>
+                        <div><a href="about.html">About</a></div>
+                        <div><a href="">Instagram</a></div>
+                        <div><a href="contact.html">Contact</a></div>
                     </div>
                 </div>
             </div>
         </header>
         
         <div class="container mx-auto p-8">
-            <div class="h-screen bg-black w-full"></div>
+            
+                <img src="images/portfolio/1-3.png" class="w-full"/>
+            
+
             <div class="flex justify-between my-12">
                 <div class="text-4xl w-1/4">Montecito Hacienda</div>
-                <div class="text-right w-[65%] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, consequuntur. Harum error nisi voluptatum, dolor dolorem totam, cum explicabo voluptatem molestias commodi quis velit itaque adipisci quaerat quas perferendis animi.</div>
+                <div class="text-right w-[65%] text-xl">This new house with an old soul is in the foothills overlooking Montecito and the Santa Barbara harbor.  The client was committed to a sophisticated but fresh interpretation of the classic Andalusian-based design language of Santa Barbara. Laura carefully incorporated contemporary space planning with classically derived details, and materials sourced from Spain, Italy, and Morocco, to reinforce a remarkable degree of authenticity and sense of place.</div>
             </div>
 
-            <div class="h-screen bg-black w-full"></div>
-            <div class="flex justify-between my-12">
-                <div class="text-4xl w-1/4">Montecito Hacienda</div>
-                <div class="text-right w-[65%] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, consequuntur. Harum error nisi voluptatum, dolor dolorem totam, cum explicabo voluptatem molestias commodi quis velit itaque adipisci quaerat quas perferendis animi.</div>
+            
+            <img src="images/portfolio/2-1.png" class="w-full"/>
+
+            <div class="flex justify-between my-20">
+                <div class="text-4xl w-1/4">Montecito Condominium</div>
+                <div class="text-right w-[65%] text-xl">For this project, a complete renovation of a seaside condominium in Montecito for a client with a extensive art collection, Laura worked with the client to create a warm modern space that would provide a stylish and comfortable environment for her family and art.  The chosen palette of materials built on warm neutrals for a sophisticated, harmonious space with a tranquil feel. </div>
             </div>
 
-            <div class="h-screen bg-black w-full"></div>
+            <img src="images/portfolio/3-1.png" class="w-full"/>
+
             <div class="flex justify-between my-12">
-                <div class="text-4xl w-1/4">Montecito Hacienda</div>
-                <div class="text-right w-[65%] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, consequuntur. Harum error nisi voluptatum, dolor dolorem totam, cum explicabo voluptatem molestias commodi quis velit itaque adipisci quaerat quas perferendis animi.</div>
+                <div class="text-4xl w-1/4">Montecito Residence</div>
+                <div class="text-right w-[65%] text-xl">A coastal modern home overlooking the Santa Barbara coastline for a long-time client that wanted to create a soaring, gallery-like space to showcase their extensive art collection.  The project was an extensive renovation of an existing home with a hypnotizing view of the sea.  Laura and the clients collaborated to realize the client’s vision of a modern space that would capitalize on the light and views of the extraordinary site.</div>
             </div>
         </div>
     
-        <footer class="flex justify-between p-20 container mx-auto">
-            <div class="w-[40%]">
-                <div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div>
-                <div class="my-8 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nobis distinctio dicta voluptatem quasi officiis ratione reprehenderit delectus illum, molestiae explicabo soluta at quaerat consectetur voluptates architecto? Eligendi, explicabo excepturi!</div>
+        <div class="bg-secondary p-20">
+            <div class="grid grid-cols-2 container mx-auto">
+                <div>
+                    <div class="uppercase text-4xl font-times tracking-widest">Laura Motley</div>
+                    <div class="uppercase text-4xl font-times tracking-widest pl-28">Design</div>
+                    
+                    <div class="w-[70%]">   
+                        <div class="my-16 text-[20px]">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
+                        <div class="text-[10px]">COPYRIGHT 2022  LAURA MOTLEY DESIGN LLC </div>
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-6 uppercase text-sm text-[16px]">
+                    <div><a href="portfolio.html">Portfolio</a></div>
+                        <div><a href="services.html">Services</a></div>
+                        <div><a href="about.html">About</a></div>
+                        <div><a href="">Instagram</a></div>
+                        <div><a href="contact.html">Contact</a></div>
+                </div>
             </div>
-            <div class="flex items-center space-x-6 uppercase text-sm">
-                <div>Portfolio</div>
-                <div>Services</div>
-                <div>About</div>
-                <div>Instagram</div>
-                <div>Contact</div>
-            </div>
-        </footer>
+        </div>
     </body>
     </html>
     
