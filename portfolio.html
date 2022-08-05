@@ -26,71 +26,152 @@
                 }
             }
         </script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="p-0 m-0 font-times text-primary">
-        <header class="bg-secondary">
-            <div class="container mx-auto">
-                <div class="flex justify-between items-center py-8">
-                    <div class="flex items-center">
-                        <a href="index.html"><div class="uppercase text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div></a>
-                    </div>
-                    <div class="flex items-center space-x-6 uppercase text-[16px]">
-                        <div><a href="portfolio.html">Portfolio</a></div>
-                        <div><a href="services.html">Services</a></div>
-                        <div><a href="about.html">About</a></div>
-                        <div><a href="">Instagram</a></div>
-                        <div><a href="contact.html">Contact</a></div>
+    <header
+            class="bg-secondary"
+            x-data="{
+                    isMenuOpen: false,
+                    toggleMenu() {
+                        console.log('toggleMenu');
+                        this.isMenuOpen = !this.isMenuOpen;
+                    }
+                }"
+    >
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center p-4 lg:p-0 py-8">
+                <div class="flex items-center">
+                    <a href="index.html"><div class="uppercase lg:text-4xl font-times text-center tracking-widest">Laura Motley <br/> Design</div></a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6 uppercase text-[16px]">
+                    <div><a @click="toggleMenu()" href="portfolio.html">Portfolio</a></div>
+                    <div><a @click="toggleMenu()" href="services.html">Services</a></div>
+                    <div><a @click="toggleMenu()" href="about.html">About</a></div>
+                    <div><a @click="toggleMenu()" href="https://www.instagram.com/laura_motley_design/">Instagram</a></div>
+                    <div><a @click="toggleMenu()" href="contact.html">Contact</a></div>
+                </div>
+                <div class="block lg:hidden" @click="toggleMenu()">
+                    <svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="20px" height="20px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/></svg>
+                </div>
+                <div class="relative hidden" x-show="isMenuOpen">
+                    <div class="fixed right-0 top-0 left-0 h-screen w-screen z-20 bg-white p-8 flex" x-show="isMenuOpen">
+                        <div class="text-xl">
+                            <div class="text-3xl font-medium border-b-2 border-primary mb-4 w-full">
+                                Menu
+                            </div>
+                            <div><a href="portfolio.html">Portfolio</a></div>
+                            <div><a href="services.html">Services</a></div>
+                            <div><a href="about.html">About</a></div>
+                            <div><a href="https://www.instagram.com/laura_motley_design/">Instagram</a></div>
+                            <div><a href="contact.html">Contact</a></div>
+                        </div>
+                        <div class="ml-auto" @click="toggleMenu()">
+                            <?xml version="1.0"?><svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="20px" height="20px">    <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"/></svg>
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
-        
-        <div class="container mx-auto p-8">
-            
-                <img src="images/portfolio/1-3.png" class="w-full"/>
-            
+        </div>
+    </header>
 
-            <div class="flex justify-between my-12">
-                <div class="text-4xl w-1/4">Montecito Hacienda</div>
-                <div class="text-right w-[65%] text-xl">This new house with an old soul is in the foothills overlooking Montecito and the Santa Barbara harbor.  The client was committed to a sophisticated but fresh interpretation of the classic Andalusian-based design language of Santa Barbara. Laura carefully incorporated contemporary space planning with classically derived details, and materials sourced from Spain, Italy, and Morocco, to reinforce a remarkable degree of authenticity and sense of place.</div>
+        <div class="lg:container lg:mx-auto lg:p-8 ">
+            <div class="relative h-100vh">
+                <div class="absolute left-5 top-[50%] text-5xl z-10" onclick="changeImage(1, -1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+                <div class="absolute right-5 top-[50%] text-5xl z-10" onclick="changeImage(1, 1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+                <img src="images/portfolio/1-1.png" class="lg:w-full w-fit" id="portfolio1"/>
             </div>
 
-            
-            <img src="images/portfolio/2-1.png" class="w-full"/>
-
-            <div class="flex justify-between my-20">
-                <div class="text-4xl w-1/4">Montecito Condominium</div>
-                <div class="text-right w-[65%] text-xl">For this project, a complete renovation of a seaside condominium in Montecito for a client with a extensive art collection, Laura worked with the client to create a warm modern space that would provide a stylish and comfortable environment for her family and art.  The chosen palette of materials built on warm neutrals for a sophisticated, harmonious space with a tranquil feel. </div>
+            <div class="lg:flex justify-between my-12 lg:p-0 p-4">
+                <div class="text-4xl my-2 lg:my-0 lg:w-1/4">Montecito Hacienda</div>
+                <div class="lg:text-right lg:w-[65%] lg:text-xl">This new house with an old soul is in the foothills overlooking Montecito and the Santa Barbara harbor.  The client was committed to a sophisticated but fresh interpretation of the classic Andalusian-based design language of Santa Barbara. Laura carefully incorporated contemporary space planning with classically derived details, and materials sourced from Spain, Italy, and Morocco, to reinforce a remarkable degree of authenticity and sense of place.</div>
             </div>
 
-            <img src="images/portfolio/3-1.png" class="w-full"/>
+            <div class="relative h-100vh">
+                <div class="absolute left-5 top-[50%] text-5xl z-10" onclick="changeImage(2, -1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+                <div class="absolute right-5 top-[50%] text-5xl z-10" onclick="changeImage(2, 1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+                <img src="images/portfolio/2-1.png" class="w-full" id="portfolio2"/>
+            </div>
 
-            <div class="flex justify-between my-12">
-                <div class="text-4xl w-1/4">Montecito Residence</div>
-                <div class="text-right w-[65%] text-xl">A coastal modern home overlooking the Santa Barbara coastline for a long-time client that wanted to create a soaring, gallery-like space to showcase their extensive art collection.  The project was an extensive renovation of an existing home with a hypnotizing view of the sea.  Laura and the clients collaborated to realize the client’s vision of a modern space that would capitalize on the light and views of the extraordinary site.</div>
+            <div class="lg:flex justify-between lg:my-20 my-12 lg:p-0 p-4">
+                <div class="text-4xl my-2 lg:my-0 lg:w-1/4">Montecito Condominium</div>
+                <div class="lg:text-right lg:w-[65%] text-xl">For this project, a complete renovation of a seaside condominium in Montecito for a client with a extensive art collection, Laura worked with the client to create a warm modern space that would provide a stylish and comfortable environment for her family and art.  The chosen palette of materials built on warm neutrals for a sophisticated, harmonious space with a tranquil feel. </div>
+            </div>
+
+            <div class="relative h-100vh">
+                <div class="absolute left-5 top-[50%] text-5xl z-10" onclick="changeImage(3, -1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+                <div class="absolute right-5 top-[50%] text-5xl z-10" onclick="changeImage(3, 1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+                <img src="images/portfolio/3-1.png" class="w-full" id="portfolio3"/>
+            </div>
+
+            <div class="lg:flex justify-between my-12 lg:p-0 p-4">
+                <div class="text-4xl my-2 lg:my-0 lg:w-1/4">Montecito Residence</div>
+                <div class="lg:text-right lg:w-[65%] text-xl">A coastal modern home overlooking the Santa Barbara coastline for a long-time client that wanted to create a soaring, gallery-like space to showcase their extensive art collection.  The project was an extensive renovation of an existing home with a hypnotizing view of the sea.  Laura and the clients collaborated to realize the client’s vision of a modern space that would capitalize on the light and views of the extraordinary site.</div>
             </div>
         </div>
-    
-        <div class="bg-secondary p-20">
-            <div class="grid grid-cols-2 container mx-auto">
-                <div>
-                    <a href="index.html"><div class="uppercase text-4xl font-times tracking-widest">Laura Motley</div></a>
-                    <a href="index.html"><div class="uppercase text-4xl font-times tracking-widest pl-28">Design</div></a>
-                    
-                    <div class="w-[70%]">   
-                        <div class="my-16 text-[20px]">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
+
+        <div class="bg-secondary lg:p-20 mt-16 lg:mt-0">
+            <div class="lg:grid grid-cols-2 lg:container mx-auto">
+                <div class="lg:text-right text-center">
+                    <a href="index.html"><div class="uppercase lg:text-4xl text-lg font-times tracking-widest">Laura Motley</div></a>
+                    <a href="index.html"><div class="uppercase lg:text-4xl text-lg font-times tracking-widest lg:pl-28">Design</div></a>
+
+                    <div class="lg:hidden mt-8 uppercase text-sm text-[16px]">
+                        <div class="my-2"><a href="portfolio.html">Portfolio</a></div>
+                        <div class="my-2"><a href="services.html">Services</a></div>
+                        <div class="my-2"><a href="about.html">About</a></div>
+                        <div class="my-2"><a href="">Instagram</a></div>
+                        <div class="my-2"><a href="contact.html">Contact</a></div>
+                    </div>
+
+                    <div class="lg:w-[70%]">
+                        <div class="my-16 text-sm lg:text-[20px]">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
                         <div class="text-[10px]">COPYRIGHT 2022  LAURA MOTLEY DESIGN LLC </div>
                     </div>
                 </div>
-                <div class="flex justify-end space-x-6 uppercase text-sm text-[16px]">
+                <div class="hidden lg:flex justify-end space-x-6 uppercase text-sm text-[16px]">
                     <div><a href="portfolio.html">Portfolio</a></div>
-                        <div><a href="services.html">Services</a></div>
-                        <div><a href="about.html">About</a></div>
-                        <div><a href="">Instagram</a></div>
-                        <div><a href="contact.html">Contact</a></div>
+                    <div><a href="services.html">Services</a></div>
+                    <div><a href="about.html">About</a></div>
+                    <div><a href="">Instagram</a></div>
+                    <div><a href="contact.html">Contact</a></div>
                 </div>
             </div>
         </div>
+
+        <script>
+            let portfolioCounts = [1, 1, 1];
+            const changeImage = (portfolioNumber, direction) => {
+                portfolioCounts[portfolioNumber-1] += direction;
+                portfolioCounts[portfolioNumber-1] %= 4;
+                if (portfolioCounts[portfolioNumber-1] <= 0 && direction === -1) portfolioCounts[portfolioNumber-1] = 3;
+                else if (portfolioCounts[portfolioNumber-1] === 0) portfolioCounts[portfolioNumber-1] = 1;
+                document.getElementById("portfolio"+portfolioNumber).src = "images/portfolio/"+ portfolioNumber +"-" + portfolioCounts[portfolioNumber-1] + ".png";
+            }
+        </script>
     </body>
     </html>
-    
