@@ -6,31 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-
-            .svg-icon {
-                width: 1em;
-                height: 1em;
-            }
-
-            .svg-icon path,
-            .svg-icon polygon,
-            .svg-icon rect {
-                fill: #4691f6;
-            }
-
-            .svg-icon circle {
-                stroke: #4691f6;
-                stroke-width: 1;
-            }
-        </style>
         <script>
             tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
                             primary: "#707070",
-                            secondary: "#F9F9F6"
+                            secondary: "#F9F9F6",
+                            textColor: "#979797"
                         }
                     },
                     fontFamily: {
@@ -44,53 +27,43 @@
                 }
             }
         </script>
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
     </head>
     <body class="p-0 m-0 font-times text-primary">
-        <header
-            class="bg-secondary"
-            x-data="{
-                isMenuOpen: false,
-                toggleMenu() {
-                    this.isMenuOpen = !this.isMenuOpen;
-                }
-            }"
-        >
-            <div class="container mx-auto">
-                <div class="flex justify-between items-center p-4 lg:p-0 py-8">
-                    <div class="flex items-center lg:p-6">
-                        <a href="index.html"><div class="uppercase lg:text-3xl font-times text-center tracking-widest">Laura Motley <br/> Design</div></a>
-                    </div>
-                    <div class="hidden lg:flex items-center space-x-6 uppercase text-[16px]">
-                        <div><a @click="toggleMenu()" href="portfolio.html">Portfolio</a></div>
-                        <div><a @click="toggleMenu()" href="services.html">Services</a></div>
-                        <div><a @click="toggleMenu()" href="about.html">About</a></div>
-                        <div><a @click="toggleMenu()" href="https://www.instagram.com/laura_motley_design/">Instagram</a></div>
-                        <div><a @click="toggleMenu()" href="contact.html">Contact</a></div>
-                    </div>
-                    <div class="block lg:hidden" @click="toggleMenu()">
-                        <svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="20px" height="20px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/></svg>
-                    </div>
-                    <div class="relative" x-show="isMenuOpen">
-                        <div class="fixed right-0 top-0 left-0 h-screen w-screen z-10 bg-white p-8 flex">
-                            <div class="text-xl">
-                                <div class="text-3xl font-medium border-b-2 border-primary mb-4 w-full">
-                                    Menu
-                                </div>
-                                <div><a href="portfolio.html">Portfolio</a></div>
-                                <div><a href="services.html">Services</a></div>
-                                <div><a href="about.html">About</a></div>
-                                <div><a href="https://www.instagram.com/laura_motley_design/">Instagram</a></div>
-                                <div><a href="contact.html">Contact</a></div>
+    <header class="bg-secondary">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center p-4 lg:p-0 py-8 text-textColor">
+                <div class="flex items-center lg:p-8">
+                    <a href="index.html"><div class="uppercase lg:text-3xl font-times text-center tracking-widest">Laura Motley <br/> Design</div></a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6 uppercase text-[16px]">
+                    <div><a href="portfolio.html">Portfolio</a></div>
+                    <div><a href="services.html">Services</a></div>
+                    <div><a href="about.html">About</a></div>
+                    <div><a href="https://www.instagram.com/laura_motley_design/">Instagram</a></div>
+                    <div><a href="contact.html">Contact</a></div>
+                </div>
+                <div class="block lg:hidden menu-button" >
+                    <svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="20px" height="20px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/></svg>
+                </div>
+                <div class="relative menu hidden" >
+                    <div class="fixed right-0 top-0 left-0 h-screen w-screen z-10 bg-white p-8 flex" >
+                        <div class="text-xl">
+                            <div class="text-3xl font-medium border-b-2 border-primary mb-4 w-full">
+                                Menu
                             </div>
-                            <div class="ml-auto" @click="toggleMenu()">
-                                <?xml version="1.0"?><svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="20px" height="20px">    <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"/></svg>
-                            </div>
+                            <div><a href="portfolio.html">Portfolio</a></div>
+                            <div><a href="services.html">Services</a></div>
+                            <div><a href="about.html">About</a></div>
+                            <div><a href="https://www.instagram.com/laura_motley_design/">Instagram</a></div>
+                            <div><a href="contact.html">Contact</a></div>
+                        </div>
+                        <div class="ml-auto menu-close-button" >
+                            <?xml version="1.0"?><svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="20px" height="20px">    <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"/></svg>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </header>
 
         <div class="lg:flex items-center">
@@ -103,53 +76,27 @@
 
                 <div
                     class="lg:text-[24px] text-xl"
-                    x-data="{
-                        show1:false,
-                        show2:false,
-                        show3:false,
-                        toggle(n) {
-                            switch(n) {
-                                case 1:
-                                    this.show1 = !this.show1;
-                                    this.show2 = false;
-                                    this.show3 = false;
-                                    break;
-                                case 2:
-                                    this.show2 = !this.show2;
-                                    this.show1 = false;
-                                    this.show3 = false;
-                                    break;
-                                case 3:
-                                    this.show3 = !this.show3;
-                                    this.show1 = false;
-                                    this.show2 = false;
-                                    break;
-                            }
-                        }
-                    }"
                 >
                     <div>
-                        <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" @click="toggle(1)">
+                        <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" onclick="toggle(1)">
                             <div >Full Scope New Build/Renovation</div>
-                            <div x-show="show1" class="text-5xl">-</div>
-                            <div x-show="!show1" class="text-5xl">+</div>
+                            <div id="show1open" class="text-5xl pointer cursor-pointer">+</div>
                         </div>
-                        <div x-show="show1" class="my-8 pb-8 border-b-[1px] border-primary-100">
+                        <div id="show1" class="my-8 pb-8 border-b-[1px] border-primary-100 hidden">
                             From initial planning stages to installation.  In
-                            collaboration with architects and builders we provide
-                            space planning, selection of hard surfaces, furniture
+                            collaboration with architects and builders we provide space planning, selection of hard surfaces, furniture
                             and fabric selection, custom furniture fabrication,
                             window treatments, wall coverings, color s
                         </div>
                     </div>
 
                     <div class="my-8">
-                        <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" @click="toggle(2)">
+                        <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" onclick="toggle(2)">
                             <div >Full Scope Furnishings</div>
-                            <div x-show="show2" class="text-5xl">-</div>
-                            <div x-show="!show2" class="text-5xl">+</div>
+                            <div id="show2close" class="hidden text-5xl">-</div>
+                            <div id="show2open" class="text-5xl">+</div>
                         </div>
-                        <div x-show="show2" class="my-8 pb-8 border-b-[1px] border-primary-100">
+                        <div id="show2" class="my-8 pb-8 border-b-[1px] border-primary-100 hidden">
                             Full home furnishing of all soft goods.  Includes space
                             planning, furniture and fabric selections, custom furniture
                             fabrication, window treatments, wall coverings, art and
@@ -158,12 +105,12 @@
                     </div>
 
                     <div class="mb-8">
-                        <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" @click="toggle(3)">
+                        <div class="border-b-[1px] border-primary-100 flex justify-between pb-4" onclick="toggle(3)">
                             <div >À La Carte</div>
-                            <div x-show="show3" class="text-5xl">-</div>
-                            <div x-show="!show3" class="text-5xl">+</div>
+                            <div id="show3open" class="text-5xl">+</div>
+                            <div id="show3close" class="hidden text-5xl">-</div>
                         </div>
-                        <div x-show="show3" class="my-8 pb-8 border-b-[1px] border-primary-100">
+                        <div id="show3" class="my-8 pb-8 border-b-[1px] border-primary-100 hidden">
                             Design services tailored to specific needs for smaller projects.
                         </div>
                     </div>
@@ -183,11 +130,10 @@
 
         <div class=""><img src="images/services-full.png" class="w-full"/></div>
 
-        <div class="bg-secondary lg:p-20 mt-16 lg:mt-0">
+        <div class="bg-secondary lg:p-20 mt-16 lg:mt-0 text-textColor p-8">
             <div class="lg:grid grid-cols-2 lg:container mx-auto">
                 <div class="lg:text-right text-center">
-                    <a href="index.html"><div class="uppercase lg:text-4xl text-lg font-times tracking-widest">Laura Motley</div></a>
-                    <a href="index.html"><div class="uppercase lg:text-4xl text-lg font-times tracking-widest lg:pl-28">Design</div></a>
+                    <a href="index.html"><div class="uppercase lg:text-4xl text-lg text-center font-times tracking-widest">Laura Motley <br/> Design</div></a>
 
                     <div class="lg:hidden mt-8 uppercase text-sm text-[16px]">
                         <div class="my-2"><a href="portfolio.html">Portfolio</a></div>
@@ -197,9 +143,9 @@
                         <div class="my-2"><a href="contact.html">Contact</a></div>
                     </div>
 
-                    <div class="lg:w-[70%]">
-                        <div class="my-16 text-sm lg:text-[20px]">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
-                        <div class="text-[10px]">COPYRIGHT 2022  LAURA MOTLEY DESIGN LLC </div>
+                    <div class="container w-[70%] mx-auto">
+                        <div class="my-16 text-sm lg:text-[18px] text-left">A full service interior design studio based in Santa Barbara.  Timeless design with an awareness of place, context, and vernacular tradition, with an emphasis on each client’s unique lifestyle.</div>
+                        <div class="text-[10px] text-left">COPYRIGHT 2022  LAURA MOTLEY DESIGN LLC </div>
                     </div>
                 </div>
                 <div class="hidden lg:flex justify-end space-x-6 uppercase text-sm text-[16px]">
@@ -211,5 +157,60 @@
                 </div>
             </div>
         </div>
+    <script>
+        let menu = document.querySelector('.menu')
+        let menuButton = document.querySelector('.menu-button')
+        let menuCloseButton = document.querySelector('.menu-close-button')
+        menuButton.addEventListener("click", (e) => {
+            e.preventDefault()
+            menu.classList.remove('hidden')
+        })
+        menuCloseButton.addEventListener("click", (e) => {
+            e.preventDefault()
+            menu.classList.add('hidden')
+        })
+        let showsFlags = [false, false, false]
+        let openButtons = [document.getElementById("show1open"), document.getElementById("show2open"), document.getElementById("show3open")]
+        let closeButtons = [document.getElementById("show1close"), document.getElementById("show2close"), document.getElementById("show3close")]
+        let shows = [document.getElementById("show1"), document.getElementById("show2"), document.getElementById("show3")]
+
+        const toggle = (option) => {
+            switch (option) {
+                case 1:
+                    if (showsFlags[0]) {
+                        shows[0].style.display = "none"
+                        openButtons[0].innerText = "+"
+                        showsFlags[0] = false
+                    } else {
+                        shows[0].style.display = "block"
+                        openButtons[0].innerText = "-"
+                        showsFlags[0] = true
+                    }
+                    break;
+                case 2:
+                    if (showsFlags[1]) {
+                        shows[1].style.display = "none"
+                        openButtons[1].innerText = "+"
+                        showsFlags[1] = false
+                    } else {
+                        shows[1].style.display = "block"
+                        openButtons[1].innerText = "-"
+                        showsFlags[1] = true
+                    }
+                    break;
+                case 3:
+                    if (showsFlags[2]) {
+                        shows[2].style.display = "none"
+                        openButtons[2].innerText = "+"
+                        showsFlags[2] = false
+                    } else {
+                        shows[2].style.display = "block"
+                        openButtons[2].innerText = "-"
+                        showsFlags[2] = true
+                    }
+                    break;
+            }
+        }
+    </script>
     </body>
     </html>
