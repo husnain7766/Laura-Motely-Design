@@ -181,8 +181,8 @@
             const changeImage = (portfolioNumber, direction) => {
 
                 portfolioCounts[portfolioNumber-1] += direction;
-                portfolioCounts[portfolioNumber-1] %= 4;
-                if (portfolioCounts[portfolioNumber-1] <= 0 && direction === -1) portfolioCounts[portfolioNumber-1] = 3;
+                portfolioCounts[portfolioNumber-1] %= 5;
+                if (portfolioCounts[portfolioNumber-1] <= 0 && direction === -1) portfolioCounts[portfolioNumber-1] = 4;
                 else if (portfolioCounts[portfolioNumber-1] === 0) portfolioCounts[portfolioNumber-1] = 1;
                 document.getElementById("portfolio"+portfolioNumber).src = "images/portfolio/"+ portfolioNumber +"-" + portfolioCounts[portfolioNumber-1] + ".png";
             }
